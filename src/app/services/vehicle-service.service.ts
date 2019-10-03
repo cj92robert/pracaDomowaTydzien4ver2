@@ -15,7 +15,7 @@ const httpOptions = {
 })
 
 export class VehicleServiceService {
-apiUrl: string = 'http://localhost:8080/vehicles/';
+apiUrl: string = 'https://springtydzien3.herokuapp.com/vehicles/';
 
   constructor(private http: HttpClient) { }
 
