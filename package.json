@@ -28,7 +28,8 @@
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "typescript": "~3.5.3",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "body-parser": "latest"
   },
   "devDependencies": {
     "@angular/language-service": "~8.2.7",
