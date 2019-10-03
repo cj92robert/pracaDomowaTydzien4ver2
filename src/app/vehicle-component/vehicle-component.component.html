@@ -1,0 +1,53 @@
+<div>
+  <button (click)="showForm()"  class="btn btn-light btn-lg btn-block">Dodaj nowy pojazd</button>
+  <div *ngIf="vehicles == null || vehicles.length == 0 " class="alert alert-danger" role="alert">
+    Lista jest pusta!
+  </div>
+  <br>
+  <div *ngIf="showAdder">
+    <div class="form-group">
+      <label for="InputMark">Marka</label>
+      <input type="text" class="form-control" id="InputMark" [(ngModel)]="newVehicle.mark"  placeholder="Marka">
+    </div>
+    <div class="form-group">
+      <label for="InputModel">Model</label>
+      <input type="text" class="form-control" id="InputModel"  [(ngModel)]="newVehicle.model" placeholder="Marka">
+    </div>
+    <div class="form-group">
+      <label for="InputColor">Color</label>
+      <input type="text" class="form-control" id="InputColor" [(ngModel)]="newVehicle.color"  placeholder="Marka">
+    </div>
+    <button (click)="addVehicle()"  class="btn btn-primary btn-lg btn-block">Zapisz pojazd</button>
+  </div>
+<p><br></p>
+  <label for="InputColorlist">Kolor samochodów</label>
+  <input type="text" (change)="refresh()"  class="form-control" id="InputColorlist" [(ngModel)]="color"  placeholder="Każdy">
+  <br>
+<ul class="list-group">
+  <li class="list-group-item list-group-item-action" *ngFor="let vehicle of vehicles">
+    {{vehicle.id}}  {{vehicle.mark}} {{vehicle.model}}  {{vehicle.color}}
+    <button (click)="Edit(vehicle)" class="btn btn-info">Edit</button>
+    <button (click)="delete(vehicle)" class="btn btn-danger">X</button>
+    <div *ngIf="idEdit==vehicle.id">
+      <div class="form-group">
+        <label for="InputMark">Marka</label>
+        <input type="text" class="form-control" id="InputMark" [(ngModel)]="vehicle.mark"  placeholder="Marka">
+      </div>
+      <div class="form-group">
+        <label for="InputModel">Model</label>
+        <input type="text" class="form-control" id="InputModel"  [(ngModel)]="vehicle.model" placeholder="Marka">
+      </div>
+      <div class="form-group">
+        <label for="InputColor">Color</label>
+        <input type="text" class="form-control" id="InputColor" [(ngModel)]="vehicle.color"  placeholder="Marka">
+      </div>
+      <button (click)="updateVehicle(vehicle)"  class="btn btn-primary btn-lg btn-block">Uaktualnij pojazd</button>
+    </div>
+  </li>
+</ul>
+
+
+
+
+
+</div>
