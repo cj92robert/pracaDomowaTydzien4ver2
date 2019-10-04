@@ -34,7 +34,7 @@ export class VehicleComponentComponent implements OnInit {
   }
 
   Edit(vehicle: Vehicle) {
-
+    this.showAdder = false;
     if(vehicle.id === this.idEdit) {
     this.idEdit = 0;
     } else{
